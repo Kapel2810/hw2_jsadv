@@ -101,18 +101,43 @@ let TIME_PER_SECOND = 1000
 
 //-------- ex5--------
 
+// const loadCode = () => {
+//     showRandomNumber(getRandomNumber)
+// }
+
+// const getRandomNumber = () => {
+//  let number =0
+//   do ( (setInterval(() => {
+//     let randomNumber = Math.floor(Math.random() * 100)
+//     mainDivElement.innerHTML = randomNumber
+//     console.log(randomNumber)
+// }, 1000)){
+//   } while {
+// numberInputElement.innerText = number++
+//   }
+// }
+
+// const showRandomNumber = (callback) => {
+//     callback()
+// }
+
 const loadCode = () => {
-    showRandomNumber(getRandomNumber)
+    showNumber(getRandomNumber)
+
 }
 
 const getRandomNumber = () => {
     setInterval(() => {
-        let randomNumber = Math.floor(Math.random() * 100)
+        let randomInputNumber = Math.floor(Math.random() * 101)
+        let randomNumber = Math.floor(Math.random() * 101)
+        
+        numberInputElement.value = randomInputNumber
         mainDivElement.innerHTML = randomNumber
-        console.log(randomNumber)
-    },  1000);
+       
+    }, 1000);
 }
 
-const showRandomNumber = (callback) => {
+const showNumber = (callback) => {
     callback()
+
 }
