@@ -50,22 +50,22 @@ let TIME_PER_SECOND = 1000
 
 //----------------ex 3---------------
 
-const runCode = () => {
-    showTime(getTime)
-}
-const getTime = () => {
-    let time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds()
-    setTimeout(() => {
-        mainParagraphElement.innerHTML = time
-        console.log(time)
-    }, TIME_IN_SECONDS * 1000);
-}
+// const runCode = () => {
+//     showTime(getTime)
+// }
+// const getTime = () => {
+//     let time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds()
+//     setTimeout(() => {
+//         mainParagraphElement.innerHTML = time
+//         console.log(time)
+//     }, TIME_IN_SECONDS * 1000);
+// }
 
-const showTime = (callback, time) => {
- console.log('start');
- callback(time)
- console.log('end');
-}
+// const showTime = (callback, time) => {
+//  console.log('start');
+//  callback(time)
+//  console.log('end');
+// }
 
 
 //--------------ex4-----------------
@@ -100,3 +100,19 @@ const showTime = (callback, time) => {
 // }
 
 //-------- ex5--------
+
+const loadCode = () => {
+    showRandomNumber(getRandomNumber)
+}
+
+const getRandomNumber = () => {
+    setInterval(() => {
+        let randomNumber = Math.floor(Math.random() * 100)
+        mainDivElement.innerHTML = randomNumber
+        console.log(randomNumber)
+    },  1000);
+}
+
+const showRandomNumber = (callback) => {
+    callback()
+}
