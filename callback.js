@@ -22,7 +22,7 @@ let TIME_IN_SECONSDS = 3
 //     console.log('end')
 // }
 
-//----------ex3
+//----------ex2----------
 //get curent time acync with timeout 3 sec
 
 const runCode = () => {
