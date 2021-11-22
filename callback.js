@@ -214,12 +214,24 @@ let TIME_PER_SECOND = 1000
 // }
 
 //------- ex 12------
-const runCode= () => {
-    getUserFromServer((result) => console.log(result))
+// const runCode= () => {
+//     getUserFromServer((result) => console.log(result))
+// }
+
+// const getUserFromServer =(callback, user) => {
+//     setTimeout(() => {
+//        return callback(user ={ fistName: "Moshe" , lastName: "Ufnik"})
+//     }, 4000);
+// }
+
+//------- ex 13--------
+
+const runCode = () => {
+    getGradesFromServer((result) => console.log(result))
 }
 
-const getUserFromServer =(callback, user) => {
+const getGradesFromServer = (callback, grades) => {
     setTimeout(() => {
-       return callback(user ={ fistName: "Moshe" , lastName: "Ufnik"})
-    }, 4000);
+            return callback( grades= [ 100, 98, 75, 80, 100, 87] )
+    }, 1000);
 }
