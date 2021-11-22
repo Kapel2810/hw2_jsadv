@@ -125,22 +125,39 @@ let TIME_PER_SECOND = 1000
 
 //---------ex 6 ----------
 
-const loadCode = () => {
-showRandomBackgroundColor(getRandomBackgroundColor)
+// const loadCode = () => {
+// showRandomBackgroundColor(getRandomBackgroundColor)
+// }
+
+// const getRandomBackgroundColor = () => {
+//     setInterval(() => {
+//          let x = Math.floor(Math.random() * 256);
+//     let y = Math.floor(Math.random() * 256);
+//     let z = Math.floor(Math.random() * 256);
+//     let backgroundgColor = "rgb(" + x + "," + y + "," + z + ")";
+//     console.log(backgroundgColor);
+
+//     document.body.style.background = backgroundgColor;
+//     }, 1000);
+// }
+
+// const showRandomBackgroundColor = (callback) => {
+//  callback()
+// }
+
+//--------  ex7----------
+
+//-------- ex8 --------
+
+const runCode = () => {
+    generateRandomNumber()
 }
 
-const getRandomBackgroundColor = () => {
-    setInterval(() => {
-         let x = Math.floor(Math.random() * 256);
-    let y = Math.floor(Math.random() * 256);
-    let z = Math.floor(Math.random() * 256);
-    let backgroundgColor = "rgb(" + x + "," + y + "," + z + ")";
-    console.log(backgroundgColor);
-
-    document.body.style.background = backgroundgColor;
-    }, 1000);
+const generateRandomNumber = () => {
+    getRandomNumberAfterDelay ((result) => console.log(result))
 }
 
-const showRandomBackgroundColor = (callback) => {
- callback()
+const getRandomNumberAfterDelay = (callback) => {
+    let randomNumber = Math.floor (Math.random() *100)
+    callback(randomNumber)
 }
