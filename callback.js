@@ -158,6 +158,8 @@ const generateRandomNumber = () => {
 }
 
 const getRandomNumberAfterDelay = (callback) => {
-    let randomNumber = Math.floor (Math.random() *100)
+    setTimeout(() => {
+        let randomNumber = Math.floor (Math.random() *100)
     callback(randomNumber)
+    }, 5000);
 }
