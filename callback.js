@@ -2,6 +2,7 @@
 let mainParagraphElement = document.getElementById('main-p')
 let mainDivElement = document.getElementById('main-div')
 let numberInputElement = document.getElementById('number-input')
+
 let today = new Date()
 let TIME_IN_SECONDS = 3
 let TIME_PER_SECOND = 1000
@@ -102,42 +103,44 @@ let TIME_PER_SECOND = 1000
 //-------- ex5--------
 
 // const loadCode = () => {
-//     showRandomNumber(getRandomNumber)
+//     showNumber(getRandomNumber)
 // }
 
 // const getRandomNumber = () => {
-//  let number =0
-//   do ( (setInterval(() => {
-//     let randomNumber = Math.floor(Math.random() * 100)
-//     mainDivElement.innerHTML = randomNumber
-//     console.log(randomNumber)
-// }, 1000)){
-//   } while {
-// numberInputElement.innerText = number++
-//   }
+//     setInterval(() => {
+
+//         let randomInputNumber = Math.floor(Math.random() * 101)
+//         let randomNumber = Math.floor(Math.random() * 101)
+
+//         numberInputElement.value = randomInputNumber
+//         mainDivElement.innerHTML = randomNumber
+
+//     }, 1000);
 // }
 
-// const showRandomNumber = (callback) => {
+// const showNumber = (callback) => {
 //     callback()
+
 // }
+
+//---------ex 6 ----------
 
 const loadCode = () => {
-    showNumber(getRandomNumber)
-
+showRandomBackgroundColor(getRandomBackgroundColor)
 }
 
-const getRandomNumber = () => {
+const getRandomBackgroundColor = () => {
     setInterval(() => {
-        let randomInputNumber = Math.floor(Math.random() * 101)
-        let randomNumber = Math.floor(Math.random() * 101)
-        
-        numberInputElement.value = randomInputNumber
-        mainDivElement.innerHTML = randomNumber
-       
+         let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    let backgroundgColor = "rgb(" + x + "," + y + "," + z + ")";
+    console.log(backgroundgColor);
+
+    document.body.style.background = backgroundgColor;
     }, 1000);
 }
 
-const showNumber = (callback) => {
-    callback()
-
+const showRandomBackgroundColor = (callback) => {
+ callback()
 }
