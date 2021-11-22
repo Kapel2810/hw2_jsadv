@@ -2,7 +2,7 @@
 let mainParagraphElement = document.getElementById('main-p')
 let mainDivElement = document.getElementById('main-div')
 let numberInputElement = document.getElementById('number-input')
- let mainSpanElement = document.getElementById('main-span')
+let mainSpanElement = document.getElementById('main-span')
 
 let today = new Date()
 let TIME_IN_SECONDS = 3
@@ -240,17 +240,36 @@ let TIME_PER_SECOND = 1000
 
 //------ ex 14 ------- 
 
+// const runCode = () =>  {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(showPosition);
+//     } else {
+//        mainSpanElement.innerHTML = "Geolocation is not supported by this browser.";
+//     }
+// }
 
+// function showPosition(position) {
+//     mainSpanElement.innerHTML = "Latitude: " + position.coords.latitude +
+//         "<br>Longitude: " + position.coords.longitude;
+// }
 
-const runCode = () =>  {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-       mainSpanElement.innerHTML = "Geolocation is not supported by this browser.";
-    }
+// -------- ex 15 -------
+//cant change random color  :(
+const runCode = () => {
+  let today = new Date()
+  let hours = today.getHours();
+  let minutes = today.getMinutes();
+  let seconds = today.getSeconds();
+  
+  minutes = checkTime(minutes);
+  seconds = checkTime(seconds);
+  mainDivElement.innerHTML = hours + ":" + minutes + ":" + seconds;
+  let randomColor = Math.floor(Math.random()*256)
+  mainDivElement.hours +=randomColor
+  setTimeout(runCode, 1000);
 }
 
-function showPosition(position) {
-    mainSpanElement.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
+const checkTime = (i) => {
+  if (i < 10) i = "0" + i;  // add zero in front of numbers < 10
+  return i;
 }
