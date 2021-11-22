@@ -149,17 +149,46 @@ let TIME_PER_SECOND = 1000
 
 //-------- ex8 --------
 
-const runCode = () => {
-    generateRandomNumber()
-}
+// const runCode = () => {
+//     generateRandomNumber()
+// }
 
-const generateRandomNumber = () => {
-    getRandomNumberAfterDelay ((result) => console.log(result))
-}
+// const generateRandomNumber = () => {
+//     getRandomNumberAfterDelay ((result) => console.log(result))
+// }
 
-const getRandomNumberAfterDelay = (callback) => {
-    setTimeout(() => {
-        let randomNumber = Math.floor (Math.random() *100)
-    callback(randomNumber)
-    }, 5000);
-}
+// const getRandomNumberAfterDelay = (callback) => {
+//     setTimeout(() => {
+//         let randomNumber = Math.floor (Math.random() *100)
+//     callback(randomNumber)
+//     }, 5000);
+// }
+
+// ---------- ex 9 -----
+
+// const runCode = () => {
+//     console.log('start');
+//     getRandomNumberAfterDelay((result) => console.log(result), 100)
+//     console.log('end');
+// }
+
+// const getRandomNumberAfterDelay = (callback, limit) => {
+//     setTimeout(() => {
+//         return callback(Math.floor(Math.random() * limit))
+//     }, 5000);
+// }
+
+//--------- ex 10 ---------
+
+// const runCode = () => {
+//     console.log('start')
+//     getRandomNumberAfterDelay((result) => console.log(result), 100, 1)
+//     console.log('end')
+// }
+
+// const getRandomNumberAfterDelay = (callback, last, first) => {
+//     setTimeout(() => {
+//         return callback(Math.floor(Math.random() * (last - first) + first))
+//     }, 5000);
+
+// }
