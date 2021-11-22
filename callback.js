@@ -192,3 +192,23 @@ let TIME_PER_SECOND = 1000
 //     }, 5000);
 
 // }
+
+//------- 11 --------
+//try-catch doesnt really work
+
+const runCode = () => {
+    console.log("start")
+    getRandomNumberAfterDelay((result) => console.log(result), 12, 99)
+    console.log('end')
+}
+
+const getRandomNumberAfterDelay = (callback, first, last) => {
+    setTimeout(() => {
+        try {
+            if (first >= 10 || last < 100)
+                return callback(Math.floor(Math.random() * (last - first) + first))
+        } catch (err) {
+            console.log("eror")
+        }
+    }, 5000);
+}
