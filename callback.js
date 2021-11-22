@@ -2,6 +2,7 @@
 let mainParagraphElement = document.getElementById('main-p')
 let mainDivElement = document.getElementById('main-div')
 let numberInputElement = document.getElementById('number-input')
+ let mainSpanElement = document.getElementById('main-span')
 
 let today = new Date()
 let TIME_IN_SECONDS = 3
@@ -214,6 +215,7 @@ let TIME_PER_SECOND = 1000
 // }
 
 //------- ex 12------
+
 // const runCode= () => {
 //     getUserFromServer((result) => console.log(result))
 // }
@@ -226,12 +228,29 @@ let TIME_PER_SECOND = 1000
 
 //------- ex 13--------
 
-const runCode = () => {
-    getGradesFromServer((result) => console.log(result))
+// const runCode = () => {
+//     getGradesFromServer((result) => console.log(result))
+// }
+
+// const getGradesFromServer = (callback, grades) => {
+//     setTimeout(() => {
+//             return callback( grades= [ 100, 98, 75, 80, 100, 87] )
+//     }, 1000);
+// }
+
+//------ ex 14 ------- 
+
+
+
+const runCode = () =>  {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+       mainSpanElement.innerHTML = "Geolocation is not supported by this browser.";
+    }
 }
 
-const getGradesFromServer = (callback, grades) => {
-    setTimeout(() => {
-            return callback( grades= [ 100, 98, 75, 80, 100, 87] )
-    }, 1000);
+function showPosition(position) {
+    mainSpanElement.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
 }
